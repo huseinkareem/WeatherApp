@@ -82,7 +82,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="v0U-kd-iZD"/>
                     <connections>
+                        <outlet property="highTempLabel" destination="PaS-pJ-qd3" id="7LF-Gs-0st"/>
+                        <outlet property="lowTempLabel" destination="XoV-UP-Dpb" id="7Qa-Kp-H3c"/>
+                        <outlet property="precipLabel" destination="Kge-zg-Vf1" id="gX7-86-vR0"/>
                         <outlet property="temperatureLabel" destination="saK-f2-nMn" id="HrI-vS-O33"/>
+                        <outlet property="windLabel" destination="TZZ-LL-riY" id="ghZ-Qt-FPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

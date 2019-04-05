@@ -13,6 +13,10 @@ class MainViewController: UIViewController {
     //MARK: IBOutlets
     
     @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var highTempLabel: UILabel!
+    @IBOutlet private weak var lowTempLabel: UILabel!
+    @IBOutlet private weak var precipLabel: UILabel!
+    @IBOutlet private weak var windLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +27,9 @@ class MainViewController: UIViewController {
     private func setupViews() {
         self.title = LocalizedStrings.MainVCTitle
         self.temperatureLabel.text = LocalizedStrings.TemperatureLabelPlaceholder
+        self.highTempLabel.text = LocalizedStrings.HighTempLabelPlaceholder
+        self.lowTempLabel.text = LocalizedStrings.LowTempLabelPlaceholder
+        self.precipLabel.text = LocalizedStrings.PrecipLabelPlaceholder
+        self.windLabel.text = LocalizedStrings.WindLabelPlaceholder
     }
 }
