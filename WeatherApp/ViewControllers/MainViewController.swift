@@ -9,12 +9,19 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    //MARK: IBOutlets
+    
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupViews()
     }
     
     private func setupViews() {
         self.title = LocalizedStrings.MainVCTitle
+        self.temperatureLabel.text = LocalizedStrings.TemperatureLabelPlaceholder
     }
 }

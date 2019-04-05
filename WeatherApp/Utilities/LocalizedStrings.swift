@@ -14,4 +14,5 @@ enum LocalizedStrings {
     
     static let MainVCTitle = NSLocalizedString("Weather App",
                                                comment: "Main View Controller title")
+    static let TemperatureLabelPlaceholder = NSLocalizedString("--°", comment: "Temperature label placeholder text")
 }
