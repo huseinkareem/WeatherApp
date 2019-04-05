@@ -13,4 +13,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    private func setupViews() {
+        self.title = LocalizedStrings.MainVCTitle
+    }
 }

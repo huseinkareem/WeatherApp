@@ -9,4 +9,9 @@
 import Foundation
 
 enum LocalizedStrings {
+    
+    //MARK: MainViewController strings
+    
+    static let MainVCTitle = NSLocalizedString("Weather App",
+                                               comment: "Main View Controller title")
 }
