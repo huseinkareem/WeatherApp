@@ -15,6 +15,7 @@
 		5001C88F2257993200282DD9 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C88E2257993200282DD9 /* WeatherAppUITests.swift */; };
 		5001C89F22579AC500282DD9 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C89E22579AC500282DD9 /* LocalizedStrings.swift */; };
 		5001C8A122579B1100282DD9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C8A022579B1100282DD9 /* MainViewController.swift */; };
+		5001C8A42257A19A00282DD9 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C8A32257A19A00282DD9 /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5001C8902257993200282DD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5001C89E22579AC500282DD9 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		5001C8A022579B1100282DD9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5001C8A32257A19A00282DD9 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		5001C86D2257993100282DD9 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				5001C8A22257A17500282DD9 /* Networking */,
 				5001C89D22579AB400282DD9 /* Utilities */,
 				5001C89C22579A9100282DD9 /* ViewControllers */,
 				5001C86E2257993100282DD9 /* AppDelegate.swift */,
@@ -142,6 +145,14 @@
 				5001C89E22579AC500282DD9 /* LocalizedStrings.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5001C8A22257A17500282DD9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5001C8A32257A19A00282DD9 /* WeatherAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5001C8A122579B1100282DD9 /* MainViewController.swift in Sources */,
+				5001C8A42257A19A00282DD9 /* WeatherAPI.swift in Sources */,
 				5001C89F22579AC500282DD9 /* LocalizedStrings.swift in Sources */,
 				5001C86F2257993100282DD9 /* AppDelegate.swift in Sources */,
 			);
