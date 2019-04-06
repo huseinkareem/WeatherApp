@@ -36,7 +36,9 @@ struct WeatherAPI {
             do {
                 let decoder = JSONDecoder()
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
-                print(weatherData.weather.first?.mainDescription)
+                DispatchQueue.main.async {
+                    completion(weatherData, nil)
+                }
             } catch let err {
                 print("err")
             }
