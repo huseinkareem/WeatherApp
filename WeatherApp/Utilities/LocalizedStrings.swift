@@ -18,4 +18,5 @@ enum LocalizedStrings {
     static let LowTempLabelPlaceholder = NSLocalizedString("Low: --°", comment: "Low Temperature label placeholder text")
     static let PrecipLabelPlaceholder = NSLocalizedString("Precip: --", comment: "Precip label placeholder text")
     static let WindLabelPlaceholder = NSLocalizedString("Wind: --", comment: "Wind label placeholder text")
+    static let DefaultCity = NSLocalizedString("Chicago", comment: "Default city for current weather")
 }

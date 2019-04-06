@@ -22,8 +22,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupViews()
-        
-        WeatherAPI.fetchCurrentWeatherForCity("Chicago") { (weatherData, error) in
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        WeatherAPI.fetchCurrentWeatherForCity(LocalizedStrings.DefaultCity) { (weatherData, error) in
             //TODO:
         }
     }
