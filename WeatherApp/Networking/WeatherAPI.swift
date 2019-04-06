@@ -28,11 +28,19 @@ struct WeatherAPI {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error == nil {
-                
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                return
             }
-        }
-        task.resume()
+            
+            do {
+                let decoder = JSONDecoder()
+                let weatherData = try decoder.decode(WeatherData.self, from: data)
+                print(weatherData.weather.first?.mainDescription)
+            } catch let err {
+                print("err")
+            }
+            
+        }.resume()
     }
 }

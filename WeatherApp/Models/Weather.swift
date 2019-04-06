@@ -10,7 +10,7 @@ import Foundation
 
 struct WeatherData: Codable {
     var coord: Coordinate
-    var weather: Weather
+    var weather: [Weather]
     var wind: Wind
     var cityName: String
     var currentTemperatureInfo: CurrentTemperatureInfo
@@ -22,6 +22,15 @@ struct WeatherData: Codable {
         case cityName = "name"
         case currentTemperatureInfo = "main"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: WeatherDataCodingKeys.self)
+        cityName = try values.decode(String.self, forKey: .cityName)
+        coord = try values.decode(Coordinate.self, forKey: .coord)
+        weather = try values.decode([Weather].self, forKey: .weather)
+        wind = try values.decode(Wind.self, forKey: .wind)
+        currentTemperatureInfo = try values.decode(CurrentTemperatureInfo.self, forKey: .currentTemperatureInfo)
+    }
 }
 
 struct Coordinate: Codable {
@@ -32,6 +41,12 @@ struct Coordinate: Codable {
         case latitude = "lat"
         case longitude = "lon"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CoordinateCodingKeys.self)
+        latitude = try values.decode(Double.self, forKey: .latitude)
+        longitude = try values.decode(Double.self, forKey: .longitude)
+    }
 }
 
 struct Weather: Codable {
@@ -41,6 +56,12 @@ struct Weather: Codable {
     enum WeatherCodingKeys: String, CodingKey {
         case mainDescription = "main"
         case subDescription = "description"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: WeatherCodingKeys.self)
+        mainDescription = try values.decode(String.self, forKey: .mainDescription)
+        subDescription = try values.decode(String.self, forKey: .subDescription)
     }
 }
 
@@ -54,6 +75,13 @@ struct CurrentTemperatureInfo: Codable {
         case currentMinTemp = "temp_min"
         case currentMaxTemp = "temp_max"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CurrentTemperatureInfoCodingKeys.self)
+        currentTemperature = try values.decode(Double.self, forKey: .currentTemperature)
+        currentMinTemp = try values.decode(Double.self, forKey: .currentMinTemp)
+        currentMaxTemp = try values.decode(Double.self, forKey: .currentMaxTemp)
+    }
 }
 
 struct Wind: Codable {
@@ -61,5 +89,10 @@ struct Wind: Codable {
     
     enum WindCodingKeys: String, CodingKey {
         case windSpeed = "speed"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: WindCodingKeys.self)
+        windSpeed = try values.decode(Double.self, forKey: .windSpeed)
     }
 }
