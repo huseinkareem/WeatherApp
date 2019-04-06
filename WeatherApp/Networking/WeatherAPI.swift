@@ -16,13 +16,23 @@ struct WeatherAPI {
     //MARK: Properties
     //TODO: Obfuscate api key
     private static var APIKey = "f3223b8ce36ebff56eca29103515a962"
-    private static var BaseURLString = "http://api.openweathermap.org/data/2.5/&units=imperial"
-    private static var CurrentWeatherEndpoint = "/weather?q="
+    private static var BaseURLString = "http://api.openweathermap.org/data/2.5/"
+    private static var CurrentWeatherEndpoint = "weather?q="
     
     
     static func fetchCurrentWeatherForCity(_ cityName: String, completion: @escaping CurrentWeatherCompletion) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let cityURLString = WeatherAPI.CurrentWeatherEndpoint + cityName
         let urlString = WeatherAPI.BaseURLString + cityURLString + "&appid=" + WeatherAPI.APIKey
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error == nil {
+                
+            }
+        }
+        task.resume()
     }
 }

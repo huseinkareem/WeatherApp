@@ -22,6 +22,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupViews()
+        
+        WeatherAPI.fetchCurrentWeatherForCity("Chicago") { (weatherData, error) in
+            //TODO:
+        }
     }
     
     private func setupViews() {
