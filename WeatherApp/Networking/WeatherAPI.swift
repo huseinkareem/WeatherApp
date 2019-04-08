@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-typealias CurrentWeatherCompletion = (_ weatherData: WeatherData, _ error: Error?) -> Void
+typealias CurrentWeatherCompletion = (_ weatherData: WeatherData?, _ error: Error?) -> Void
 
 struct WeatherAPI {
     
@@ -25,11 +25,13 @@ struct WeatherAPI {
         let cityURLString = WeatherAPI.CurrentWeatherEndpoint + cityName
         let urlString = WeatherAPI.BaseURLString + cityURLString + "&appid=" + WeatherAPI.APIKey
         guard let url = URL(string: urlString) else {
+            //TODO: error handling
             return
         }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
+                //TODO: error handling
                 return
             }
             
@@ -37,9 +39,11 @@ struct WeatherAPI {
                 let decoder = JSONDecoder()
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
                 DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     completion(weatherData, nil)
                 }
             } catch let err {
+                //TODO: error handling
                 print("err")
             }
             

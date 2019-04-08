@@ -6,6 +6,7 @@
 //  Copyright © 2019 Husein Kareem. All rights reserved.
 //
 
+//TODO: CoreLocation if requested
 import UIKit
 
 class MainViewController: UIViewController {
@@ -18,6 +19,8 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var precipLabel: UILabel!
     @IBOutlet private weak var windLabel: UILabel!
     
+    private var weatherData: WeatherData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +29,17 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         WeatherAPI.fetchCurrentWeatherForCity(LocalizedStrings.DefaultCity) { (weatherData, error) in
-            //TODO:
+            //TODO: Add progress HUD
+            guard let weatherData = weatherData else {
+                return
+            }
+            
+            self.weatherData = weatherData
+            
+            self.temperatureLabel.text = "\(weatherData.currentTemperatureInfo.currentTemperature)°"
+            self.highTempLabel.text = "\(LocalizedStrings.HighTempLabelText)\(weatherData.currentTemperatureInfo.currentMaxTemp)°"
+            self.lowTempLabel.text = "\(LocalizedStrings.LowTempLabelText)\(weatherData.currentTemperatureInfo.currentMinTemp)°"
+            self.windLabel.text = "\(LocalizedStrings.WindLabelText)\(weatherData.wind.windSpeed) \(LocalizedStrings.MPH)"
         }
     }
     
