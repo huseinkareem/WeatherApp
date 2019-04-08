@@ -82,6 +82,8 @@ struct CurrentTemperatureInfo: Codable {
         currentMinTemp = try values.decode(Double.self, forKey: .currentMinTemp)
         currentMaxTemp = try values.decode(Double.self, forKey: .currentMaxTemp)
     }
+    
+    //TODO: Convert Kelvin to Farenheint (add class to Utilities)
 }
 
 struct Wind: Codable {
