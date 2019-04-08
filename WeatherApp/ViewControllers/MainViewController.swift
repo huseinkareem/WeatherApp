@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var lowTempLabel: UILabel!
     @IBOutlet private weak var precipLabel: UILabel!
     @IBOutlet private weak var windLabel: UILabel!
+    @IBOutlet private weak var mainWeatherDescriptionLabel: UILabel!
+    @IBOutlet private weak var subWeatherDescriptionLabel: UILabel!
     
     private var weatherData: WeatherData?
     
@@ -40,6 +42,14 @@ class MainViewController: UIViewController {
             self.highTempLabel.text = "\(LocalizedStrings.HighTempLabelText)\(weatherData.currentTemperatureInfo.currentMaxTemp)°"
             self.lowTempLabel.text = "\(LocalizedStrings.LowTempLabelText)\(weatherData.currentTemperatureInfo.currentMinTemp)°"
             self.windLabel.text = "\(LocalizedStrings.WindLabelText)\(weatherData.wind.windSpeed) \(LocalizedStrings.MPH)"
+            
+            if let weatherDescription = weatherData.weather.first {
+                self.mainWeatherDescriptionLabel.text = "\(weatherDescription.mainDescription)"
+                self.subWeatherDescriptionLabel.text = "\(weatherDescription.subDescription)"
+            } else {
+                self.mainWeatherDescriptionLabel.text = ""
+                self.subWeatherDescriptionLabel.text = ""
+            }
         }
     }
     

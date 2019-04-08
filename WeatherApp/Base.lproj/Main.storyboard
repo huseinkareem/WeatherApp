@@ -64,10 +64,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8Y-MN-QLx">
+                                <rect key="frame" x="16" y="310" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="YWt-PR-O6r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4S-Rm-6SD">
+                                <rect key="frame" x="16" y="375" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="U5d-NJ-ewN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PaS-pJ-qd3" firstAttribute="top" secondItem="saK-f2-nMn" secondAttribute="bottom" constant="8" id="5RA-MF-CG1"/>
+                            <constraint firstItem="P4S-Rm-6SD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="81j-Wv-fbW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8Y-MN-QLx" secondAttribute="trailing" constant="16" id="BKe-2d-uR0"/>
                             <constraint firstItem="Kge-zg-Vf1" firstAttribute="top" secondItem="XoV-UP-Dpb" secondAttribute="bottom" constant="8" id="DSe-9e-uGJ"/>
                             <constraint firstItem="XoV-UP-Dpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8N-Zq-JzI"/>
                             <constraint firstItem="TZZ-LL-riY" firstAttribute="top" secondItem="Kge-zg-Vf1" secondAttribute="bottom" constant="8" id="M0g-xJ-PoG"/>
@@ -77,6 +97,10 @@
                             <constraint firstItem="XoV-UP-Dpb" firstAttribute="top" secondItem="PaS-pJ-qd3" secondAttribute="bottom" constant="8" id="aav-7f-QIn"/>
                             <constraint firstItem="TZZ-LL-riY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d5v-OC-ip7"/>
                             <constraint firstItem="Kge-zg-Vf1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSZ-gC-h3W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P4S-Rm-6SD" secondAttribute="trailing" constant="16" id="lq8-lx-A76"/>
+                            <constraint firstItem="c8Y-MN-QLx" firstAttribute="top" secondItem="TZZ-LL-riY" secondAttribute="bottom" constant="10" id="rpW-I8-BOg"/>
+                            <constraint firstItem="P4S-Rm-6SD" firstAttribute="top" secondItem="c8Y-MN-QLx" secondAttribute="bottom" constant="10" id="xJJ-w1-4B4"/>
+                            <constraint firstItem="c8Y-MN-QLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="z6r-fF-RYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -84,7 +108,9 @@
                     <connections>
                         <outlet property="highTempLabel" destination="PaS-pJ-qd3" id="7LF-Gs-0st"/>
                         <outlet property="lowTempLabel" destination="XoV-UP-Dpb" id="7Qa-Kp-H3c"/>
+                        <outlet property="mainWeatherDescriptionLabel" destination="c8Y-MN-QLx" id="hlI-Yx-oof"/>
                         <outlet property="precipLabel" destination="Kge-zg-Vf1" id="gX7-86-vR0"/>
+                        <outlet property="subWeatherDescriptionLabel" destination="P4S-Rm-6SD" id="j2d-RT-ync"/>
                         <outlet property="temperatureLabel" destination="saK-f2-nMn" id="HrI-vS-O33"/>
                         <outlet property="windLabel" destination="TZZ-LL-riY" id="ghZ-Qt-FPb"/>
                     </connections>
